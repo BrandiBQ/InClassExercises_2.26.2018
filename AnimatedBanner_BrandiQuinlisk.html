@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Basic Tween Demo</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+   <style>
+		body {
+			padding: 0; 
+			margin: 0;
+			font-family: 'Open Sans', sans-serif;
+		}
+		#banner {
+			width: 920px;
+			height: 100px;
+			margin: 30px auto;
+			background-color: cadetblue;
+		}
+		#txt {
+			font-size: 2em;
+            color:white;
+		}
+       
+       img {
+           width:50px;
+           height: auto;
+       }
+       
+	
+	</style>
+</head>
+
+<body>
+	<div id="banner">
+    	<div id="txt">Dogs are the best!</div>
+        <img src="05_CarRide.jpg">
+        
+    </div>
+
+    <!-- use CDN libraries: preferred if you have web access -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/easing/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>
+    
+    
+    <script>
+    	var txt = document.getElementById('txt');
+		
+		TweenLite.to(txt, 2, {x: 300, 
+                              skewX:-30, 
+                              ease: SlowMo.ease.config(0.7, 0.7, false),
+                              y: 100} 
+                    );
+        
+        TweenLite.to("img", 4, {rotation:360, left:350, ease:Bounce.easeOut, delay:1.5});
+        
+    </script>
+</body>
+</html>
